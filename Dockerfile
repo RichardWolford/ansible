@@ -66,4 +66,6 @@ RUN pip install --upgrade pip
 RUN pip install junit-xml
 RUN pip install ansible
 ENV container=docker
+
+EXPOSE 22
 CMD ["/usr/sbin/init"]
