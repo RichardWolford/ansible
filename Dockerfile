@@ -65,6 +65,9 @@ RUN ssh-keygen -q -t dsa -N '' -f /etc/ssh/ssh_host_dsa_key && \
 RUN pip install --upgrade pip
 RUN pip install junit-xml
 RUN pip install ansible
+RUN mkdir /.ansible
+RUN chmod -R 777 /.ansible
+RUN chmod -R 777 /etc/ansible/
 ENV container=docker
 
 EXPOSE 22
