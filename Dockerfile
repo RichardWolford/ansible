@@ -49,6 +49,7 @@ RUN dnf clean all && \
     which \
     yum \
     zip \
+	java \
     && \
     dnf clean all
 
