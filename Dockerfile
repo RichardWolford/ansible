@@ -69,6 +69,8 @@ RUN pip install ansible
 RUN mkdir /.ansible
 RUN chmod -R 777 /.ansible
 RUN chmod -R 777 /etc/ansible/
+RUN java -jar slave.jar -jnlpUrl https://jenkins-cloudautomation.intapps.hpeplatformservices.com/computer/Ansible/slave-agent.jnlp -secret 3dc84c91a9185c958c246f83a4446396d61208ef05cfb2c13fd67f8fba82ed8b
+
 ENV container=docker
 
 EXPOSE 22
