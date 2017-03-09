@@ -62,7 +62,6 @@
   
   - name: Install plugins  
     shell: "java -jar /jenkins-cli.jar install-plugin {{ item }} --username admin --password password"
-    when: plugins_installed.changed and plugins_installed.stdout.find('{{ item }}') == -1
     with_items: "{{ plugins }}"
     ignore_errors: yes
     notify:
