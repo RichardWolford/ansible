@@ -61,7 +61,7 @@
     get_url: url=http://localhost:8080/jnlpJars/jenkins-cli.jar dest=/jenkins-cli.jar mode=0440
   
   - name: Install plugins  
-    shell: "java -jar /jenkins-cli.jar install-plugin {{ item }} --username admin --password password"
+    shell: "java -jar /jenkins-cli.jar install-plugin {{ item }} -s localhost --username admin --password password"
     with_items: "{{ plugins }}"
     ignore_errors: yes
     notify:
