@@ -8,6 +8,12 @@
   - name: Install Java
     yum: name=java-1.7.0-openjdk state=latest
     
+  - name: Install gtar
+    yum: name=gtar state=latest
+  
+  - name: Install unzip
+    yum: name=unzip state=latest
+    
   - name: Download Nexus 3
     get_url: url=https://www.sonatype.com/oss-thank-you-tar.gz dest=/oss-thank-you-tar.gz  
     
