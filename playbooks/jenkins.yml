@@ -2,6 +2,12 @@
 - hosts: jenkins
   become: true
 
+  plugins:
+  - 'ldap'
+  - 'github'
+  - 'translation'
+  - 'preSCMbuildstep'
+  - 'gravatar'
     
   tasks: 
   - name: Install key
