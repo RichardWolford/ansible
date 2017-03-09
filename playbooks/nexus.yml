@@ -8,9 +8,6 @@
   - name: Install Java
     yum: name=java-1.7.0-openjdk state=latest
     
-  - name: Install gtar
-    yum: name=gtar state=latest
-  
   - name: Install unzip
     yum: name=unzip state=latest
     
