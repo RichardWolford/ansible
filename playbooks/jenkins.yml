@@ -1,11 +1,14 @@
 ---
 - hosts: jenkins
 
-- rpm_key:
-    state: present
-    key:  https://jenkins-ci.org/redhat/jenkins-ci.org.key
+
     
-  tasks:  
+  tasks: 
+  - name: Install key
+    rpm_key:
+      state: present
+      key:  https://jenkins-ci.org/redhat/jenkins-ci.org.key
+    
   - name: Add and install RPM for Repo
     get_url: url=http://pkg.jenkins-ci.org/redhat/jenkins.repo dest=/etc/yum.repos.d/jenkins.repo
 
