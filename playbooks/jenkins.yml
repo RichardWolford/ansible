@@ -53,6 +53,6 @@
     shell: chkconfig jenkins on      
     
   - name: Get Jenkins CLI
-    get_url: url=http://localhost:8080/jnlpJars/jenkins-cli.jar dest=/etc/jenkins-cli/jenkins-cli.jar mode=0440
+    get_url: url=http://localhost:8080/jnlpJars/jenkins-cli.jar dest=/jenkins-cli.jar mode=0440
     
   
