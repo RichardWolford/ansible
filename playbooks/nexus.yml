@@ -7,3 +7,6 @@
   tasks:   
   - name: Install Java
     yum: name=java-1.7.0-openjdk state=latest
+    
+  - name: Download Nexus 3
+    get_url: url=https://www.sonatype.com/oss-thank-you-tar.gz dest=oss-thank-you-tar.gz  
