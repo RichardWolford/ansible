@@ -1,6 +1,6 @@
 ---
 - hosts: jenkins
-
+  become: true
 
     
   tasks: 
