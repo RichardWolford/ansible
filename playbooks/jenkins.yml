@@ -19,6 +19,12 @@
     yum: name=jenkins state=latest
     register: jenkins_install
   
+  - name: Install Git
+    yum: name=git state=latest
+    
+  - name: Install cUrl
+    yum: name=curl state=latest
+    
   - name: Ensure Jenkins is running
     service:
       name: jenkins
