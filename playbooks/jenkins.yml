@@ -1,0 +1,13 @@
+---
+
+- name: Install Jenkins
+  yum: name-jenkins state-latest
+  register: jenkins_install
+  
+- name: Ensure Jenkins is running
+  service:
+    name: jenkins
+    state: started
+    
+- name: Start Jenkins on boot
+  shell: chkconfig jenkins on    
