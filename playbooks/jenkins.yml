@@ -1,13 +1,14 @@
 ---
 - hosts: jenkins
   become: true
-
-  plugins:
-  - 'ldap'
-  - 'github'
-  - 'translation'
-  - 'preSCMbuildstep'
-  - 'gravatar'
+  
+  vars:
+    plugins:
+    - 'ldap'
+    - 'github'
+    - 'translation'
+    - 'preSCMbuildstep'
+    - 'gravatar'
     
   tasks: 
   - name: Install key
@@ -37,4 +38,4 @@
       state: started
     
   - name: Start Jenkins on boot
-    shell: chkconfig jenkins on    
+    shell: chkconfig jenkins on  
