@@ -21,6 +21,7 @@
     - 'timestamper'
     - 'ws-cleanup'
     - 'windows-slaves'
+    - 'msbuild'
     
   handlers:
   - name: Restart Jenkins
