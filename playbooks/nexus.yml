@@ -11,5 +11,8 @@
   - name: Download Nexus 3
     get_url: url=https://www.sonatype.com/oss-thank-you-tar.gz dest=/oss-thank-you-tar.gz  
     
+  - name: Create Nexus extraction folder
+    file: path=/nexus3 state=directory mode=7777
+    
   - name: Extract Nexus
     unarchive: src=/oss-thank-you-tar.gz dest=/nexus3 remote_src=true
