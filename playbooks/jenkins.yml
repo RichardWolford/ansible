@@ -9,6 +9,18 @@
     - 'translation'
     - 'preSCMbuildstep'
     - 'gravatar'
+    - 'ant'
+    - 'build-timeout'
+    - 'email-ext'
+    - 'git'
+    - 'github-branch-source'
+    - 'gradle'
+    - 'workflow-aggregator'
+    - 'pipeline-github-lib'
+    - 'ssh-slaves'
+    - 'timestamper'
+    - 'ws-cleanup'
+    - 'windows-slaves'
     
   tasks: 
   - name: Install key
@@ -38,4 +50,9 @@
       state: started
     
   - name: Start Jenkins on boot
-    shell: chkconfig jenkins on  
+    shell: chkconfig jenkins on      
+    
+  - name: Install Jenkins CLI
+    get_url: url=http://localhost:8080/jnlpJars/jenkins-cli.jar dest=/etc/jenkins-cli/jenkins-cli.jar mode=0440
+    
+  
