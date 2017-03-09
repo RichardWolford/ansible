@@ -25,7 +25,7 @@
   handlers:
   - name: Restart Jenkins
     become: yes
-    command: "java -jar /jenkins-cli.jar safe-restart --username admin --password password"
+    command: "java -jar /jenkins-cli.jar -s http://localhost:8080 -noKeyAuth safe-restart --username admin --password password"
   
   tasks: 
   - name: Install key
