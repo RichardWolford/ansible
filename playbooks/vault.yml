@@ -1,0 +1,21 @@
+---
+- hosts: vault
+  become: true
+  
+  vars:
+  
+  tasks:
+    
+  - name: Install unzip
+    yum: name=unzip state=latest
+    
+  - name: Download Vault
+    get_url: url=https://releases.hashicorp.com/vault/0.6.5/vault_0.6.5_linux_amd64.zip dest=/vault_0.6.5_linux_amd64.zip  
+    
+  - name: Create Vault extraction folder
+    file: path=/vault state=directory mode=7777
+    
+  - name: Extract Vault
+    unarchive: src=/vault_0.6.5_linux_amd64.zip dest=/vault remote_src=true
+  
+  
