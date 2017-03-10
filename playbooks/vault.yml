@@ -53,6 +53,7 @@
     
   - name: Set DB Root PASSWORD
     shell: mysqladmin -u root password "password123"
+    ignore_errors: yes
     
   - name: Update Root Password in DB
     shell: mysql -u root -p"password123" -e "UPDATE mysql.user SET Password=PASSWORD('password123') WHERE User='root'"
