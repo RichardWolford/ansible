@@ -6,7 +6,7 @@
   
   tasks:   
   - name: Install Java
-    yum: name=java-1.7.0-openjdk state=latest
+    yum: name=java-1.8.0-openjdk.x86_64 state=latest
     
   - name: Install unzip
     yum: name=unzip state=latest
