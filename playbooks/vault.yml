@@ -20,3 +20,11 @@
     
   - name: Extract Vault
     unarchive: src=/vault_0.6.5_linux_amd64.zip dest=/vault remote_src=true
+    
+  - name: Ensure MariaDB is running
+    service:
+      name: mariadb
+      state: started
+
+  - name: Ensure MariaDB on started
+    shell: systemctl enable mariadb  
