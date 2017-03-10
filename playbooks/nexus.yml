@@ -19,3 +19,6 @@
     
   - name: Extract Nexus
     unarchive: src=/nexus-3.0.2-02-unix.tar.gz dest=/nexus3 remote_src=true
+  
+  - name: Run Nexus
+    shell:  /nexus3/nexus-3.0.2-02/bin/nexus
