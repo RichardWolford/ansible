@@ -28,3 +28,21 @@
 
   - name: Ensure MariaDB on started
     shell: systemctl enable mariadb  
+    
+  - name: Set DB Root PASSWORD
+    shell: mysqladmin -u root password "password123"
+    
+  - name: Update Root Password in DB
+    shell: mysql -u root -p"password123" -e "UPDATE mysql.user SET Password=PASSWORD('password123') WHERE User='root'"
+
+  - name: Restrict root login
+    shell: mysql -u root -p"password123" -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1')"
+    
+  - name: Drop all non-root users
+    shell: mysql -u root -p"password123" -e "DELETE FROM mysql.user WHERE User=''"
+    
+  - name: Drop test database
+    shell: mysql -u root -p"password123" -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%'"
+    
+  - name: FLUSH
+    shell: mysql -u root -p"password123" -e "FLUSH PRIVILEGES"    
