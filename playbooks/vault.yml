@@ -9,6 +9,9 @@
   - name: Install unzip
     yum: name=unzip state=latest
     
+  - name: Install MariaDB
+    yum: name=mariadb-server state=latest    
+  
   - name: Download Vault
     get_url: url=https://releases.hashicorp.com/vault/0.6.5/vault_0.6.5_linux_amd64.zip dest=/vault_0.6.5_linux_amd64.zip  
     
@@ -17,5 +20,3 @@
     
   - name: Extract Vault
     unarchive: src=/vault_0.6.5_linux_amd64.zip dest=/vault remote_src=true
-  
-  
