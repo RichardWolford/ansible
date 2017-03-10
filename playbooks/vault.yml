@@ -25,6 +25,9 @@
   - name: Set remote file path here
     set_fact: remote_file_path=/vault/vault.conf    
  
+  - name: Remove configuration file
+    shell: rm {{ remote_file_path }}
+    
     # Create a blank file
   - name: Create a new file
     file: path="{{ remote_file_path }}" state=touch
