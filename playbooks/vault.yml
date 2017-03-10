@@ -37,7 +37,7 @@
     register: file_path
   
     # Write file content in file_content variable
-  - set_fact: file_content='backend "mysql" {\nusername = "root"\n password="password123"\n}'
+  - set_fact: file_content='backend "mysql" {\n\tusername = "root"\n\tpassword="password123"\n}\nlistener "tcp" {\n\taddress = "127.0.0.1:8200"\n\ttls_disable = 1\n}'
   
     # If file exist then copy content in remote file.
   - copy: content="{{ file_content }}" dest="{{ remote_file_path }}"
