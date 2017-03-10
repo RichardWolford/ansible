@@ -68,4 +68,7 @@
     shell: mysql -u root -p"password123" -e "DELETE FROM mysql.db WHERE Db='test' OR Db='test\_%'"
     
   - name: FLUSH
-    shell: mysql -u root -p"password123" -e "FLUSH PRIVILEGES"    
+    shell: mysql -u root -p"password123" -e "FLUSH PRIVILEGES"   
+
+  - name: Set Vault Configuration
+    shell:  /vault/vault server -config ./vault.conf  
