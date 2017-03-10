@@ -71,4 +71,4 @@
     shell: mysql -u root -p"password123" -e "FLUSH PRIVILEGES"   
 
   - name: Set Vault Configuration
-    shell:  /vault/vault server -config ./vault.conf  
+    shell:  /vault/vault server -config /vault/vault.conf  
