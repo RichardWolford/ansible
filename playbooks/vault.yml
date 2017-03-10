@@ -21,6 +21,25 @@
   - name: Extract Vault
     unarchive: src=/vault_0.6.5_linux_amd64.zip dest=/vault remote_src=true
     
+    # Define file path
+  - name: Set remote file path here
+    set_fact: remote_file_path=/vault/vault.conf    
+ 
+    # Create a blank file
+  - name: Create a new file
+    file: path="{{ remote_file_path }}" state=touch
+  
+    # Check remote file
+  - stat: path="{{ remote_file_path }}"
+    register: file_path
+  
+    # Write file content in file_content variable
+  - set_fact: file_content='backend "mysql" {\n\rusername = "root"\n\r password="password123"\n\r}'
+  
+    # If file exist then copy content in remote file.
+  - copy: content="{{ file_content }}" dest="{{ remote_file_path }}"
+    when: file_path.stat.exists == true
+     
   - name: Ensure MariaDB is running
     service:
       name: mariadb
