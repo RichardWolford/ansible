@@ -9,6 +9,9 @@ rm epel-release-7-9.noarch.rpm -f
 yum install ansible -y
 yum install git -y
 
+# Install azure python sdk for ansible use
+pip install "azure==2.0.0rc5"
+
 yum update -y
 
 if [! -f "/root/.ssh/id_rsa"]; then
