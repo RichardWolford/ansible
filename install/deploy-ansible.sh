@@ -8,9 +8,10 @@ rm epel-release-7-9.noarch.rpm -f
 
 yum install ansible -y
 yum install git -y
+yum install python2-pip -yum
 
 # Install azure python sdk for ansible use
-pip install "azure==2.0.0rc5"
+pip install "azure==2.0.0rc6"
 
 yum update -y
 
