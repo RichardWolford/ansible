@@ -8,12 +8,14 @@ rm epel-release-7-9.noarch.rpm -f
 
 yum install ansible -y
 yum install git -y
-yum install python2-pip -yum
-
-# Install azure python sdk for ansible use
-pip install "azure==2.0.0rc6"
+yum install python2-pip -y
+yum install gcc libffi-devel python-devel openssl-devel -y
 
 yum update -y
+
+pip install --upgrade pip
+# Install azure python sdk for ansible use
+pip install "azure==2.0.0rc6"
 
 if [! -f "/root/.ssh/id_rsa"]; then
 	ssh-keygen -t rsa -b 4096 -C "rwolford@ansible" -N "" -f "/root/.ssh/id_rsa"
