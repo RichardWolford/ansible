@@ -4,7 +4,9 @@
 This folder contains a shellscript which will install Ansible onto an existing machine.  
 
 Included in the installation is:
+<ul>
   EPEL Releas 7.9
   Ansible
   Git
   Azure Python SDK
+</ul>
