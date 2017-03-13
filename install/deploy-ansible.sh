@@ -24,8 +24,7 @@ fi
 # clone ansible repository
 if [! -d "/etc/ansible/git"]; then
 	mkdir /etc/ansible/git
-	git clone https://github.com/RichardWolford/ansible.git /etc/ansible/git/
-	
+	git clone https://github.com/RichardWolford/ansible.git /etc/ansible/git/	
 else
 	cd /etc/ansible/git
 	git pull origin master	

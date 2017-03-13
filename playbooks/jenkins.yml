@@ -22,6 +22,7 @@
     - 'ws-cleanup'
     - 'windows-slaves'
     - 'msbuild'
+    - 'hashicorp-vault-plugin'
     
   handlers:
   - name: Restart Jenkins
