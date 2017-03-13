@@ -1,12 +1,12 @@
 <h1>How to use this Repo</h1>
 
-<b>Install Folder</b>
+<h2>Install Folder</h2>
 This folder contains a shellscript which will install Ansible onto an existing machine.  
 
 Included in the installation is:
 <ul>
-  EPEL Releas 7.9
-  Ansible
-  Git
-  Azure Python SDK
+  <li>EPEL Release 7.9</li>
+  <li>Ansible</li>
+  <li>Git</li>
+  <li>Azure Python SDK</li>
 </ul>
